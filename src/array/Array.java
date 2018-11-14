@@ -2,9 +2,9 @@ package array;
 
 public class Array {
 
-    int[] data;
-    int last;
-    int length;
+    private int[] data;
+    private int last;
+    private int length;
 
     Array(){
         data = new int[20];
