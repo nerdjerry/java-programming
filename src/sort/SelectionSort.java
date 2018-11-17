@@ -10,15 +10,15 @@ public class SelectionSort {
     }
 
     public void sort(){
-        int largestElementIndex = 0;
+
         for(int lastSortedIndex = length - 1 ; lastSortedIndex > 0 ; lastSortedIndex--){
+            int largestElementIndex = 0;
             for(int i = 1; i <= lastSortedIndex; i++){
                 if(data[i] > data[largestElementIndex]){
                     largestElementIndex = i;
                 }
             }
             swap(largestElementIndex,lastSortedIndex);
-            largestElementIndex = 0;
         }
     }
 
