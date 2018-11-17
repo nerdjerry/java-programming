@@ -7,7 +7,7 @@ public class Main {
         for(int i = input.length - 1 ; i >= 0; i--){
             input[i] = n-1-i;
         }
-        SelectionSort sorter = new SelectionSort(input);
+        InsertionSort sorter = new InsertionSort(input);
         sorter.sort();
 
         for(int i = 0; i <input.length; i++){
