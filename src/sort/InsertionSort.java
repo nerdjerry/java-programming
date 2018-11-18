@@ -13,10 +13,8 @@ public class InsertionSort {
         for(int firstUnsortedIndex = 1; firstUnsortedIndex < length; firstUnsortedIndex++){
             int newElement = data[firstUnsortedIndex];
             int i;
-            for(i = firstUnsortedIndex; i > 0 ; i--){
-                if(data[i-1] > newElement){
+            for(i = firstUnsortedIndex; i > 0 && data[i-1] > newElement; i--){
                     data[i] = data[i-1];
-                }
             }
             data[i] = newElement;
         }
