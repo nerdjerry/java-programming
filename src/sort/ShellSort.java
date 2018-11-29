@@ -14,7 +14,7 @@ public class ShellSort {
             for(int i = gap; i < length ; i++){
                 int newElement = data[i];
                 int j;
-                for(j = i; j > 0 && data[j-gap] > newElement; j = j-gap){
+                for(j = i; j >= gap && data[j-gap] > newElement; j = j-gap){
                     data[j] = data[j-gap];
                 }
                 data[j] = newElement;
