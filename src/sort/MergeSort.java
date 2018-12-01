@@ -25,6 +25,16 @@ public class MergeSort {
     }
 
     private void merge(int[] data, int start, int mid, int end) {
+        /*
+         Optimization 1: If last element of left subarray is less than
+        equal to first element of right subarray then we need not do any comparison
+        as left and right subarrays will already be sorted in themselves.
+        So just merge two
+         */
+
+        if(data[mid] <= data[mid+1])
+            return;
+
         int n = end - start + 1;
         int[] temp = new int[n];
         int tindex = 0;
