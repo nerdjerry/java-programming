@@ -47,7 +47,7 @@ public class MergeSort {
             } else if(j == end + 1){
                 temp[tindex++] = data[i++];
             } else{
-                if(data[i] < data [j]){
+                if(data[i] <= data [j]){
                     temp[tindex++] = data[i++];
                 } else{
                     temp[tindex++] = data[j++];
