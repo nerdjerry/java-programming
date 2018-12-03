@@ -18,7 +18,7 @@ public class QuickSort {
     }
 
     private void quicksort(int[] data, int start, int end) {
-        if(start<end){
+        if(start < end){
             int position = partition(data, start, end);
             quicksort(data,start,position);
             quicksort(data,position+1, end);
@@ -29,21 +29,14 @@ public class QuickSort {
         int i = start;
         int j = end;
         int pivot = data[start];
-        j--;
-        while(i<j){
-            while (data[j] > pivot && i < j){
-                j--;
-            }
+        while(i < j){
+            while (data[--j] > pivot && i < j);
             if (i < j) {
                 data[i] = data[j];
-                i++;
             }
-            while(data[i] <= pivot && i < j){
-                i++;
-            }
-            if (i<j) {
+            while(data[++i] <= pivot && i < j);
+            if (i < j) {
                 data[j] = data[i];
-                j--;
             }
         }
         data[i] = pivot;
