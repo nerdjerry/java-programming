@@ -30,11 +30,11 @@ public class QuickSort {
         int j = end;
         int pivot = data[start];
         while(i < j){
-            while (data[--j] > pivot && i < j);
+            while (i < j && data[--j] > pivot);
             if (i < j) {
                 data[i] = data[j];
             }
-            while(data[++i] <= pivot && i < j);
+            while(i < j && data[++i] <= pivot);
             if (i < j) {
                 data[j] = data[i];
             }
