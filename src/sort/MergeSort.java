@@ -41,25 +41,21 @@ public class MergeSort {
         int i = start;
         int j = mid + 1;
 
-        while(i < mid + 1 || j <  end + 1){
-            if(i == mid + 1){
-                temp[tindex++] = data[j++];
-            } else if(j == end + 1){
-                temp[tindex++] = data[i++];
-            } else{
-                if(data[i] <= data [j]){
-                    temp[tindex++] = data[i++];
-                } else{
-                    temp[tindex++] = data[j++];
-                }
-            }
+        while (i < mid + 1 && j < end + 1){
+            temp[tindex++] = data[i] <= data[j] ? data[i++]: data[j++];
         }
 
-        //Copy sorted elements to original array
-        int aindex = end;
-        tindex--;
-        while (aindex >= start){
-            data[aindex--] = temp[tindex--];
+        arrayCopy(data, data, i , start + tindex, mid - i + 1);
+        arrayCopy(temp, data, 0, start, tindex);
+    }
+
+    private void arrayCopy(int[] source, int[] dest, int sourceStart, int destStart, int count){
+        int i = sourceStart;
+        int j = destStart;
+
+        while(count > 0){
+            dest[j++] = source[i++];
+            count--;
         }
     }
 

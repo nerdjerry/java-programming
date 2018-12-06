@@ -8,8 +8,8 @@ public class Main {
             input[i] = n-1-i;
         }
 
-        input = new int[]{20, 35, 15, 7, 55, 1, 20,16,29};
-        CountSort sorter = new CountSort(input, 55, 1);
+        input = new int[]{20, 35, 15, 7, 55, 1, 21,16,29};
+        MergeSort sorter = new MergeSort(input);
         sorter.sort();
 
         sorter.print();
