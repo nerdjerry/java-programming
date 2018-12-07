@@ -42,4 +42,31 @@ public class CountSort {
             System.out.println(data[i]);
         }
     }
+
+    public void stableSort(){
+        int countLength = upper - lower + 1;
+        int[] count = new int[countLength];
+
+        for(int i = 0 ; i < countLength; i++){
+            count[i] = 0;
+        }
+
+        for(int i = 0; i < length;i++){
+            count[data[i]-lower] +=1;
+        }
+
+        for(int i = 1; i < countLength; i++){
+            count[i] += count[i-1];
+        }
+
+        int[] temp = new int[length];
+        for(int i=length-1; i >= 0;i--){
+            temp[count[data[i]-lower]-1] = data[i];
+            count[data[i]-lower]-=1;
+        }
+
+        for(int i =0;i<length;i++){
+            data[i] = temp[i];
+        }
+    }
 }

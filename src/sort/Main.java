@@ -8,9 +8,9 @@ public class Main {
             input[i] = n-1-i;
         }
 
-        input = new int[]{20, 35, 15, 7, 55, 1, 21,16,29};
-        MergeSort sorter = new MergeSort(input);
-        sorter.sort();
+        input = new int[]{2,9,2,4,2,6,5,9,3};
+        CountSort sorter = new CountSort(input,9,2);
+        sorter.stableSort();
 
         sorter.print();
     }
