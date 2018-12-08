@@ -8,9 +8,9 @@ public class Main {
             input[i] = n-1-i;
         }
 
-        input = new int[]{2,9,2,4,2,6,5,9,3};
-        CountSort sorter = new CountSort(input,9,2);
-        sorter.stableSort();
+        input = new int[]{1236,3213,1113,5674,4321,6543,7658};
+        RadixSort sorter = new RadixSort(input,10,4);
+        sorter.sort();
 
         sorter.print();
     }
