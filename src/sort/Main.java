@@ -8,8 +8,8 @@ public class Main {
             input[i] = n-1-i;
         }
 
-        input = new int[]{1236,3213,1113,5674,4321,6543,7658};
-        RadixSort sorter = new RadixSort(input,10,4);
+            input = new int[]{1236,3213,1113,5674,4321,6543,7658};
+        MergeSort sorter = new MergeSort(input);
         sorter.sort();
 
         sorter.print();

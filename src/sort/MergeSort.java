@@ -8,7 +8,7 @@ public class MergeSort {
     MergeSort(int[] input){
         data = input;
         start = 0;
-        end = data.length - 1;
+        end = data.length;
     }
 
     public void sort(){
@@ -16,10 +16,10 @@ public class MergeSort {
     }
 
     private void mergesort(int[] data, int start, int end) {
-        if(start < end) {
+        if(!(end-start < 2)) {
             int mid = (start + end) / 2;
             mergesort(data, start, mid);
-            mergesort(data, mid+1, end);
+            mergesort(data, mid, end);
             merge(data, start, mid, end);
         }
     }
@@ -32,20 +32,20 @@ public class MergeSort {
         So just merge two
          */
 
-        if(data[mid] <= data[mid+1])
+        if(data[mid-1] <= data[mid])
             return;
 
-        int n = end - start + 1;
+        int n = end - start;
         int[] temp = new int[n];
         int tindex = 0;
         int i = start;
-        int j = mid + 1;
+        int j = mid ;
 
-        while (i < mid + 1 && j < end + 1){
+        while (i < mid  && j < end){
             temp[tindex++] = data[i] <= data[j] ? data[i++]: data[j++];
         }
 
-        arrayCopy(data, data, i , start + tindex, mid - i + 1);
+        arrayCopy(data, data, i , start + tindex, mid - i);
         arrayCopy(temp, data, 0, start, tindex);
     }
 
