@@ -9,8 +9,8 @@ public class Main {
         }
 
             input = new int[]{1236,3213,1113,5674,4321,6543,7658};
-        MergeSort sorter = new MergeSort(input);
-        sorter.sort();
+        InsertionSort sorter = new InsertionSort(input);
+        sorter.recurssionSort();
 
         sorter.print();
     }
