@@ -32,7 +32,7 @@ public class MergeSort {
         So just merge two
          */
 
-        if(data[mid-1] >= data[mid])
+        if(data[mid-1] <= data[mid])
             return;
 
         int n = end - start;
@@ -42,7 +42,7 @@ public class MergeSort {
         int j = mid ;
 
         while (i < mid  && j < end){
-            temp[tindex++] = data[i] >= data[j] ? data[i++]: data[j++];
+            temp[tindex++] = data[i] <= data[j] ? data[i++]: data[j++];
         }
 
         arrayCopy(data, data, i , start + tindex, mid - i);
