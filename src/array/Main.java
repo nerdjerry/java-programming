@@ -2,7 +2,7 @@ package array;
 
 public class Main {
 
-    public static void main(String[] args){
+    public static void main1(String[] args){
         Array array = new Array();
         array.insertAtEnd(4);
         array.insertAtEnd(5);
