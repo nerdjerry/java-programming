@@ -8,9 +8,9 @@ public class Main {
             input[i] = n-1-i;
         }
 
-            input = new int[]{1236,3213,1113,5674,4321,6543,7658};
+        input = new int[]{1236,3213,1113,5674,4321,6543,7658};
         InsertionSort sorter = new InsertionSort(input);
-        sorter.recurssionSort();
+        sorter.insertionRecurssion();
 
         sorter.print();
     }

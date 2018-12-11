@@ -42,4 +42,21 @@ public class InsertionSort {
             System.out.println(data[i]);
         }
     }
+
+    public void insertionRecurssion(){
+        insertionSort(data,data.length-1);
+    }
+    public void insertionSort(int[] array, int num){
+        if(num < 2){
+            return;
+        }
+
+        insertionSort(array, num - 1);
+        int newElement = array[num];
+        int j ;
+        for(j = num; j > 0 && array[j-1]>newElement; j--){
+            array[j] = array[j-1];
+        }
+        array[j] = newElement;
+    }
 }
