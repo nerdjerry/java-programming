@@ -7,15 +7,15 @@ public class Main {
         Employee alpha = new Employee("Alpha", "Man", 234);
         Employee sara = new Employee("Sara", "Khan", 32);
 
-        LinkedList list = new LinkedList();
-        list.insertAtFront(charlie);
-        list.insertAtFront(alpha);
-        list.insertAtFront(sara);
+        DoubleLinkedList list = new DoubleLinkedList();
+        list.insertAtEnd(charlie);
+        list.insertAtEnd(alpha);
+        list.insertAtEnd(sara);
 
-        list.print();
+        list.printFromStart();
 
-        System.out.println(list.removeFromFront().getEmployee());
+        System.out.println(list.removeFromEnd().getEmployee());
 
-        list.print();
+        list.printFromEnd();
     }
 }
