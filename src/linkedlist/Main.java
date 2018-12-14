@@ -17,5 +17,7 @@ public class Main {
         System.out.println(list.removeFromEnd().getEmployee());
 
         list.printFromEnd();
+        System.out.println(list.getSize());
+        System.out.println(list.isEmpty());
     }
 }

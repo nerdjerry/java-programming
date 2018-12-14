@@ -4,6 +4,7 @@ public class DoubleLinkedList {
 
     private EmployeeNode head;
     private EmployeeNode tail;
+    private int size = 0;
 
     public void insertAtFront(Employee employee) {
         EmployeeNode newEmployee = new EmployeeNode(employee);
@@ -15,6 +16,7 @@ public class DoubleLinkedList {
             tail = newEmployee;
         }
         head = newEmployee;
+        this.size += 1;
     }
 
     public void insertAtEnd(Employee employee) {
@@ -27,6 +29,7 @@ public class DoubleLinkedList {
             head = newEmployee;
         }
         tail = newEmployee;
+        this.size += 1;
     }
 
     public EmployeeNode removeFromFront() {
@@ -34,6 +37,7 @@ public class DoubleLinkedList {
         head = removedNode.getNext();
         head.setPrev(null);
         removedNode.setNext(null);
+        this.size -= 1;
         return removedNode;
     }
 
@@ -42,7 +46,16 @@ public class DoubleLinkedList {
         tail = removedNode.getPrev();
         tail.setNext(null);
         removedNode.setPrev(null);
+        this.size -= 1;
         return removedNode;
+    }
+
+    public int getSize() {
+        return this.size;
+    }
+
+    public boolean isEmpty() {
+        return this.head == null;
     }
 
     public void printFromStart() {
