@@ -33,6 +33,12 @@ public class DoubleLinkedList {
     }
 
     public EmployeeNode removeFromFront() {
+        if (isEmpty()) {
+            return null;
+        }
+        if (head.getNext() == null) {
+            tail = null;
+        }
         EmployeeNode removedNode = head;
         head = removedNode.getNext();
         head.setPrev(null);
@@ -42,6 +48,12 @@ public class DoubleLinkedList {
     }
 
     public EmployeeNode removeFromEnd() {
+        if (isEmpty()) {
+            return null;
+        }
+        if (tail.getPrev() == null) {
+            head = null;
+        }
         EmployeeNode removedNode = tail;
         tail = removedNode.getPrev();
         tail.setNext(null);
