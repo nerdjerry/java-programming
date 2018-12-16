@@ -1,12 +1,12 @@
 package sort;
 
 public class RadixSort {
-    int[] data;
+    String[] data;
     int radix;
     int width;
     int length;
 
-    RadixSort(int[] input, int radix, int width){
+    RadixSort(String[] input, int radix, int width) {
         this.data = input;
         this.radix = radix;
         this.width = width;
@@ -17,7 +17,7 @@ public class RadixSort {
         return number / (int)Math.pow(10,position) % radix;
     }
 
-    public void sort(){
+    /*public void sort(){
         int[] temp = new int[length];
 
         for(int i = 0; i < width; i++){
@@ -49,6 +49,36 @@ public class RadixSort {
                 data[j] = temp[j];
             }
         }
+    }*/
+
+    public void sortAlpha() {
+        String[] temp = new String[length];
+
+        for (int i = width - 1; i >= 0; i--) {
+            int[] count = new int[radix];
+
+            for (int j = 0; j < length; j++) {
+                count[getIndex(data[j], i)] += 1;
+            }
+
+            for (int j = 1; j < count.length; j++) {
+                count[j] += count[j - 1];
+            }
+
+            for (int j = length - 1; j > -1; j--) {
+                temp[count[getIndex(data[j], i)] - 1] = data[j];
+                count[getIndex(data[j], i)] -= 1;
+            }
+
+            for (int j = 0; j < length; j++) {
+                data[j] = temp[j];
+            }
+
+        }
+    }
+
+    public int getIndex(String element, int position) {
+        return element.charAt(position) - 'a';
     }
 
     public void print(){
