@@ -41,4 +41,8 @@ public class LinkedList {
         }
         System.out.println("null");
     }
+
+    public Employee getHead() {
+        return this.head.employee;
+    }
 }

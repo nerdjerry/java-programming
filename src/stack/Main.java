@@ -1,20 +1,17 @@
 package stack;
 
+import linkedlist.Employee;
+
 public class Main {
 
     public static void main(String[] args) {
-        StackArray stackArray = new StackArray();
-        stackArray.push(4);
-        stackArray.push(5);
-        stackArray.push(6);
-        stackArray.push(12);
-        stackArray.push(2);
-        stackArray.push(8);
-        stackArray.push(0);
-        stackArray.push(9);
-        stackArray.push(3);
-        stackArray.push(7);
-        stackArray.push(8);
+        StackLinkedList stackArray = new StackLinkedList();
+        Employee charlie = new Employee("Charlie", "John", 123);
+        Employee alpha = new Employee("Alpha", "Man", 234);
+        Employee sara = new Employee("Sara", "Khan", 32);
+        stackArray.push(charlie);
+        stackArray.push(alpha);
+        stackArray.push(sara);
         System.out.println(stackArray.peak());
         System.out.println(stackArray.pop());
         stackArray.print();
