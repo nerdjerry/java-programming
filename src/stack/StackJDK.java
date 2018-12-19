@@ -15,11 +15,11 @@ public class StackJDK {
     }
 
     public void push(Employee employee) {
-        stack.addFirst(employee);
+        stack.push(employee);
     }
 
     public Employee pop() {
-        return stack.removeFirst();
+        return stack.pop();
     }
 
     public Employee peek() {
