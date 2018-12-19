@@ -30,8 +30,7 @@ public class StackArray {
             head -= 1;
             return pop;
         } else {
-            System.out.println("Overflow");
-            return -1;
+            throw new StackOverflowError();
         }
     }
 
@@ -39,8 +38,7 @@ public class StackArray {
         if (head > -1) {
             return data[head];
         } else {
-            System.out.println("Overflow");
-            return -1;
+            throw new StackOverflowError();
         }
     }
 
