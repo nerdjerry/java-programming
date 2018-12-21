@@ -74,7 +74,7 @@ public class DoubleLinkedList {
             head = newEmployeeNode;
             return true;
         }
-        while (current.getNext().getEmployee() != employee) {
+        while (current.getNext() != null && current.getNext().getEmployee() != employee) {
             current = current.getNext();
         }
         if (current.getNext().getEmployee() == employee) {
