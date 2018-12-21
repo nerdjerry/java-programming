@@ -72,6 +72,7 @@ public class DoubleLinkedList {
             newEmployeeNode.setNext(current);
             current.setPrev(newEmployeeNode);
             head = newEmployeeNode;
+            size += 1;
             return true;
         }
         while (current.getNext() != null && current.getNext().getEmployee() != employee) {
@@ -82,6 +83,7 @@ public class DoubleLinkedList {
             current.getNext().setPrev(newEmployeeNode);
             current.setNext(newEmployeeNode);
             newEmployeeNode.setPrev(current);
+            size += 1;
             return true;
         } else {
             return false;

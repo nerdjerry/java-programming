@@ -34,6 +34,7 @@ public class LinkedList {
         if (current.getEmployee() == employee) {
             newEmployeeNode.setNext(current);
             this.head = newEmployeeNode;
+            this.size += 1;
             return true;
         }
         while (current.getNext() != null && current.getNext().getEmployee() != employee) {
@@ -42,6 +43,7 @@ public class LinkedList {
         if (current.getNext().getEmployee() == employee) {
             newEmployeeNode.setNext(current.getNext());
             current.setNext(newEmployeeNode);
+            this.size += 1;
             return true;
         }
         return false;
