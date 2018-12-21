@@ -26,10 +26,12 @@ public class CircularLinkedList {
             removedNode = head;
             tail = null;
             head = null;
+            removedNode.setNext(null);
         } else {
             removedNode = head;
             head = head.getNext();
             tail.setNext(head);
+            removedNode.setNext(null);
         }
         size -= 1;
         return removedNode.getEmployee();
