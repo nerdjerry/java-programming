@@ -25,6 +25,24 @@ public class LinkedList {
         return removedNode;
     }
 
+    public boolean addBefore(Employee newEmployee, Employee employee) {
+        EmployeeNode newEmployeeNode = new EmployeeNode(newEmployee);
+        EmployeeNode current = this.head;
+        if (current.getEmployee() == employee) {
+            newEmployeeNode.setNext(current);
+            this.head = newEmployeeNode;
+            return true;
+        }
+        while (current.getNext().getEmployee() != employee) {
+            current = current.getNext();
+        }
+        if (current.getNext().getEmployee() == employee) {
+            newEmployeeNode.setNext(current.getNext());
+            current.setNext(newEmployeeNode);
+            return true;
+        }
+        return false;
+    }
     public int getSize() {
         return this.size;
     }

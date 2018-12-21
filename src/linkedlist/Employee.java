@@ -44,4 +44,17 @@ public class Employee {
                 ", id=" + id +
                 '}';
     }
+
+    public boolean equals(Object employee) {
+        if (employee == this) {
+            return true;
+        }
+        if (!(employee instanceof Employee)) {
+            return false;
+        }
+        Employee otherEmployee = (Employee) employee;
+        return this.firstname == otherEmployee.getFirstname() &&
+                this.lastname == otherEmployee.getLastname() &&
+                this.id == otherEmployee.getId();
+    }
 }
