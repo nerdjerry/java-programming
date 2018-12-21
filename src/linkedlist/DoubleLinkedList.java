@@ -62,22 +62,31 @@ public class DoubleLinkedList {
         return removedNode;
     }
 
-    public void addBefore(Employee newEmployee, Employee employee) {
+    public boolean addBefore(Employee newEmployee, Employee employee) {
         EmployeeNode newEmployeeNode = new EmployeeNode(newEmployee);
         EmployeeNode current = head;
+        if (isEmpty()) {
+            return false;
+        }
         if (current.getEmployee() == employee) {
             newEmployeeNode.setNext(current);
             current.setPrev(newEmployeeNode);
             head = newEmployeeNode;
-            return;
+            return true;
         }
         while (current.getNext().getEmployee() != employee) {
             current = current.getNext();
         }
-        newEmployeeNode.setNext(current.getNext());
-        current.getNext().setPrev(newEmployeeNode);
-        current.setNext(newEmployeeNode);
-        newEmployeeNode.setPrev(current);
+        if (current.getNext().getEmployee() == employee) {
+            newEmployeeNode.setNext(current.getNext());
+            current.getNext().setPrev(newEmployeeNode);
+            current.setNext(newEmployeeNode);
+            newEmployeeNode.setPrev(current);
+            return true;
+        } else {
+            return false;
+        }
+
     }
     public int getSize() {
         return this.size;

@@ -28,6 +28,9 @@ public class LinkedList {
     public boolean addBefore(Employee newEmployee, Employee employee) {
         EmployeeNode newEmployeeNode = new EmployeeNode(newEmployee);
         EmployeeNode current = this.head;
+        if (isEmpty()) {
+            return false;
+        }
         if (current.getEmployee() == employee) {
             newEmployeeNode.setNext(current);
             this.head = newEmployeeNode;
