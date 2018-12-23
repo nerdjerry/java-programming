@@ -39,6 +39,10 @@ public class QueueArray<E> {
         this.queue[this.front] = null;
         this.front += 1;
         this.size -= 1;
+        if (this.isEmpty()) {
+            this.front = 0;
+            this.end = -1;
+        }
         return removed;
     }
 
