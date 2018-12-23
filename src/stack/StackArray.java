@@ -2,11 +2,12 @@ package stack;
 
 public class StackArray {
 
-    private int length = 10;
+    private int length;
     private int[] data;
     private int head;
 
-    StackArray() {
+    StackArray(int capacity) {
+        length = capacity;
         data = new int[length];
         head = -1;
     }
