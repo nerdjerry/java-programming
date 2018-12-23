@@ -36,6 +36,7 @@ public class QueueArray<E> {
             return null;
         }
         E removed = this.queue[this.front];
+        this.queue[this.front] = null;
         this.front += 1;
         this.size -= 1;
         return removed;
