@@ -6,7 +6,7 @@ public class StackArray {
     private int[] data;
     private int head;
 
-    StackArray(int capacity) {
+    public StackArray(int capacity) {
         length = capacity;
         data = new int[length];
         head = -1;

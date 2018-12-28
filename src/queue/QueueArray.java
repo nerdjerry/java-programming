@@ -8,7 +8,7 @@ public class QueueArray<E> {
     private int front;
     private int end;
 
-    QueueArray(int capacity) {
+    public QueueArray(int capacity) {
         this.capacity = capacity;
         this.queue = (E[]) new Object[this.capacity];
         this.size = 0;
