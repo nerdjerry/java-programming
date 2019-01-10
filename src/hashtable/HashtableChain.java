@@ -57,18 +57,20 @@ public class HashtableChain {
     }
 
     public int hash(String key) {
-        return Math.abs(key.hashCode()) % this.capacity;
+        return Math.abs(key.length()) % this.capacity;
     }
 
     public void printTable() {
         StoredValue<Integer> current;
         for (int i = 0; i < capacity; i++) {
-            if (table[i] != null) {
+            if (table[i] != null && table[i].size() != 0) {
                 Iterator<StoredValue<Integer>> iterator = table[i].iterator();
                 while (iterator.hasNext()) {
                     current = iterator.next();
-                    System.out.println("Key: " + current.getKey() + ", Value : " + current.getValue());
+                    System.out.print("Key: " + current.getKey() + ", Value : " + current.getValue());
+                    System.out.print("->");
                 }
+                System.out.println("null");
             }
         }
     }
