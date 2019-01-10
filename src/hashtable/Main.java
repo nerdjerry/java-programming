@@ -14,6 +14,7 @@ public class Main {
         System.out.println(table.get("Aditi"));
         table.remove("Aditi");
         table.remove("Aditi6");
+        table.remove("Prateej");
         table.printTable();
     }
 }

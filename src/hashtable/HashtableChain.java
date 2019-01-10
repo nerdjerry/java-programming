@@ -39,6 +39,9 @@ public class HashtableChain {
         int hashedKey = hash(key);
         int index = 0;
         int removedValue = -1;
+        if (table[hashedKey] == null) {
+            return removedValue;
+        }
         StoredValue<Integer> current;
         Iterator<StoredValue<Integer>> iterator = table[hashedKey].iterator();
         while (iterator.hasNext()) {
@@ -54,7 +57,7 @@ public class HashtableChain {
     }
 
     public int hash(String key) {
-        return key.hashCode() % this.capacity;
+        return Math.abs(key.hashCode()) % this.capacity;
     }
 
     public void printTable() {
