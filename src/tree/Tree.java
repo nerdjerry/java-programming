@@ -11,4 +11,31 @@ public class Tree {
             this.root = new TreeNode(value);
         }
     }
+
+    public void traverseInOrder() {
+        if (this.root != null) {
+            this.root.traverseInOrder();
+            System.out.println();
+        } else {
+            System.out.println("Empty Tree");
+        }
+    }
+
+    public void traversePreOrder() {
+        if (this.root != null) {
+            this.root.traversePreOrder();
+            System.out.println();
+        } else {
+            System.out.println("Empty Tree");
+        }
+    }
+
+    public void traversePostOrder() {
+        if (this.root != null) {
+            this.root.traversePostOrder();
+            System.out.println();
+        } else {
+            System.out.println("Empty Tree");
+        }
+    }
 }

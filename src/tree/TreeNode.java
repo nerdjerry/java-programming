@@ -53,4 +53,34 @@ public class TreeNode {
     public void setRightChild(TreeNode rightChild) {
         this.rightChild = rightChild;
     }
+
+    public void traverseInOrder() {
+        if (this.leftChild != null) {
+            this.leftChild.traverseInOrder();
+        }
+        System.out.print(this.data + ", ");
+        if (this.rightChild != null) {
+            this.rightChild.traverseInOrder();
+        }
+    }
+
+    public void traversePreOrder() {
+        System.out.print(this.data + ", ");
+        if (this.leftChild != null) {
+            this.leftChild.traversePreOrder();
+        }
+        if (this.rightChild != null) {
+            this.rightChild.traversePreOrder();
+        }
+    }
+
+    public void traversePostOrder() {
+        if (this.leftChild != null) {
+            this.leftChild.traversePreOrder();
+        }
+        if (this.rightChild != null) {
+            this.rightChild.traversePostOrder();
+        }
+        System.out.print(this.data + ", ");
+    }
 }
