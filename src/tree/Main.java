@@ -14,5 +14,9 @@ public class Main {
         tree.traversePostOrder();
         System.out.println("Pre Order");
         tree.traversePreOrder();
+        System.out.println(tree.get(20));
+        System.out.println(tree.get(121));
+        System.out.println(tree.min());
+        System.out.println(tree.max());
     }
 }

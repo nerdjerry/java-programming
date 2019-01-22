@@ -83,4 +83,35 @@ public class TreeNode {
         }
         System.out.print(this.data + ", ");
     }
+
+    public int get(int value) {
+        if (this.data == value) {
+            return this.data;
+        } else if (this.data > value) {
+            if (this.leftChild != null) {
+                return this.leftChild.get(value);
+            }
+        } else {
+            if (this.rightChild != null) {
+                return this.rightChild.get(value);
+            }
+        }
+        return Integer.MIN_VALUE;
+    }
+
+    public int min() {
+        if (this.leftChild != null) {
+            return this.leftChild.min();
+        } else {
+            return this.data;
+        }
+    }
+
+    public int max() {
+        if (this.rightChild != null) {
+            return this.rightChild.max();
+        } else {
+            return this.data;
+        }
+    }
 }

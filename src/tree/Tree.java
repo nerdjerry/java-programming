@@ -38,4 +38,28 @@ public class Tree {
             System.out.println("Empty Tree");
         }
     }
+
+    public int get(int value) {
+        if (this.root != null) {
+            return this.root.get(value);
+        } else {
+            return Integer.MIN_VALUE;
+        }
+    }
+
+    public int min() {
+        if (this.root != null) {
+            return this.root.min();
+        } else {
+            return Integer.MIN_VALUE;
+        }
+    }
+
+    public int max() {
+        if (this.root != null) {
+            return this.root.max();
+        } else {
+            return Integer.MAX_VALUE;
+        }
+    }
 }
