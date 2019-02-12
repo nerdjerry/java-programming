@@ -62,4 +62,12 @@ public class Tree {
             return Integer.MAX_VALUE;
         }
     }
+
+    public void delete(int value) {
+        if (this.root == null) {
+            return;
+        } else {
+            this.root = this.root.delete(value);
+        }
+    }
 }

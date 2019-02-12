@@ -114,4 +114,30 @@ public class TreeNode {
             return this.data;
         }
     }
+
+    public TreeNode delete(int value) {
+        if (value < data) {
+            this.leftChild = this.leftChild.delete(value);
+            return this;
+        } else if (value > data) {
+            this.rightChild = this.rightChild.delete(value);
+            return this;
+        } else {
+            //Case 1
+            if (this.leftChild == null && this.rightChild == null) {
+                return null;
+            }//Case 2
+            else if (this.leftChild != null && this.rightChild == null) {
+                TreeNode child = this.leftChild;
+                this.leftChild = null;
+                return child;
+            } else if (this.rightChild != null && this.leftChild == null) {
+                TreeNode child = this.rightChild;
+                this.rightChild = null;
+                return child;
+            } else {
+                return null;
+            }
+        }
+    }
 }
