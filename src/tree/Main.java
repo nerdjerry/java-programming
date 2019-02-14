@@ -18,7 +18,7 @@ public class Main {
         System.out.println(tree.get(121));
         System.out.println(tree.min());
         System.out.println(tree.max());
-        tree.delete(20);
+        tree.delete(25);
         System.out.println("After delete");
         tree.traverseInOrder();
     }

@@ -136,7 +136,9 @@ public class TreeNode {
                 this.rightChild = null;
                 return child;
             } else {
-                return null;
+                this.data = this.leftChild.max();
+                this.leftChild = this.leftChild.delete(this.data);
+                return this;
             }
         }
     }
