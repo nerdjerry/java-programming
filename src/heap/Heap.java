@@ -12,14 +12,21 @@ public class Heap {
 
     public void insert(int value) {
         heap[index] = value;
+        heapifyAbove(index);
         index += 1;
-        int currentIndex = index - 1;
-        int parentIndex = parent(currentIndex);
-        while (parentIndex >= 0 && heap[currentIndex] > heap[parentIndex]) {
-            swap(currentIndex, parentIndex);
-            currentIndex = parentIndex;
-            parentIndex = parent(currentIndex);
+
+    }
+
+    private void heapifyAbove(int index) {
+        int newValue = heap[index];
+        int parentIndex = parent(index);
+        while (index > 0 && newValue > heap[parentIndex]) {
+            //Bring parent down
+            heap[index] = heap[parentIndex];
+            index = parentIndex;
+            parentIndex = parent(index);
         }
+        heap[index] = newValue;
     }
 
     private void swap(int currentIndex, int parentIndex) {
