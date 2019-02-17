@@ -10,5 +10,10 @@ public class Main {
         heap.insert(4);
         heap.insert(12);
         heap.insert(90);
+        heap.insert(123);
+        heap.insert(214);
+        heap.insert(81);
+        heap.insert(91);
+        heap.delete(123);
     }
 }
