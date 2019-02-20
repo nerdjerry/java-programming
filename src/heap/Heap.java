@@ -53,6 +53,14 @@ public class Heap {
         return deletedValue;
     }
 
+    public int peak() {
+        if (isEmpty()) {
+            return -1;
+        } else {
+            return heap[0];
+        }
+    }
+
     private void heapifyBelow(int index, int lastHeapIndex) {
         int childToSwap;
         while (index < lastHeapIndex) {
