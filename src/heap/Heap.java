@@ -30,32 +30,35 @@ public class Heap {
                 heapifyAbove(deleteIndex);
             } else if ((leftChildExists(deleteIndex) && heap[deleteIndex] < heap[leftChild(deleteIndex)])
                     || (rightChildExists(deleteIndex) && heap[deleteIndex] < heap[rightChild(deleteIndex)])) {
-                heapifyBelow(deleteIndex);
+                heapifyBelow(deleteIndex, this.index);
             } else {
                 return;
             }
         }
     }
 
-    private void heapifyBelow(int index) {
-        int value = heap[index];
-        int leftChildIndex = leftChild(index);
-        int rightChildIndex = rightChild(index);
-        while ((leftChildExists(index) && value < heap[leftChild(index)])
-                || (rightChildExists(index) && value < heap[rightChild(index)])) {
-            if (heap[leftChildIndex] > heap[rightChildIndex]) {
-                heap[index] = heap[leftChildIndex];
-                index = leftChildIndex;
-                leftChildIndex = leftChild(index);
-                rightChildIndex = rightChild(index);
+    private void heapifyBelow(int index, int lastHeapIndex) {
+        int childToSwap;
+        while (index < lastHeapIndex) {
+            int leftChildIndex = leftChild(index);
+            int rightChildIndex = rightChild(index);
+            if (leftChildIndex < lastHeapIndex) {
+                if (rightChildIndex < lastHeapIndex && heap[leftChildIndex] < heap[rightChildIndex]) {
+                    childToSwap = rightChildIndex;
+                } else {
+                    childToSwap = leftChildIndex;
+                }
             } else {
-                heap[index] = heap[rightChildIndex];
-                index = rightChildIndex;
-                leftChildIndex = leftChild(index);
-                rightChildIndex = rightChild(index);
+                break;
+            }
+            if (heap[index] < heap[childToSwap]) {
+                int tmp = heap[index];
+                heap[index] = heap[childToSwap];
+                heap[childToSwap] = tmp;
+            } else {
+                break;
             }
         }
-        heap[index] = value;
     }
 
     private void heapifyAbove(int index) {
