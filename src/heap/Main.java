@@ -16,5 +16,7 @@ public class Main {
         heap.insert(91);
         heap.remove(1);
         System.out.println(heap.peak());
+        heap.heapsort();
+        heap.printSorted();
     }
 }

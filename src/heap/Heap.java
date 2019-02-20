@@ -44,7 +44,8 @@ public class Heap {
         int deletedValue = heap[index];
         int parentIndex = parent(index);
         heap[index] = heap[this.index - 1];
-        if (index == 0 && heap[index] < heap[parentIndex]) {
+        heap[this.index - 1] = 0;
+        if (index == 0 || heap[index] < heap[parentIndex]) {
             heapifyBelow(index, this.index - 1);
         } else {
             heapifyAbove(index);
@@ -82,6 +83,7 @@ public class Heap {
             } else {
                 break;
             }
+            index = childToSwap;
         }
     }
 
