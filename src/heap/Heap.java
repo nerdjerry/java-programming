@@ -37,6 +37,22 @@ public class Heap {
         }
     }
 
+    public int remove(int index) {
+        if (isEmpty()) {
+            return -1;
+        }
+        int deletedValue = heap[index];
+        int parentIndex = parent(index);
+        heap[index] = heap[this.index - 1];
+        if (index == 0 && heap[index] < heap[parentIndex]) {
+            heapifyBelow(index, this.index - 1);
+        } else {
+            heapifyAbove(index);
+        }
+        this.index -= 1;
+        return deletedValue;
+    }
+
     private void heapifyBelow(int index, int lastHeapIndex) {
         int childToSwap;
         while (index < lastHeapIndex) {
@@ -109,5 +125,9 @@ public class Heap {
 
     private int rightChild(int currentIndex) {
         return 2 * currentIndex + 2;
+    }
+
+    public boolean isEmpty() {
+        return index == 0;
     }
 }

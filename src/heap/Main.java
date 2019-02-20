@@ -14,6 +14,6 @@ public class Main {
         heap.insert(214);
         heap.insert(81);
         heap.insert(91);
-        heap.delete(123);
+        heap.remove(1);
     }
 }
