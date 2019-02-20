@@ -62,6 +62,17 @@ public class Heap {
         }
     }
 
+    public void heapsort() {
+        int lastHeapIndex = this.index - 1;
+        while (lastHeapIndex >= 0) {
+            int tmp = this.heap[0];
+            this.heap[0] = this.heap[lastHeapIndex];
+            this.heap[lastHeapIndex] = tmp;
+            heapifyBelow(0, lastHeapIndex);
+            lastHeapIndex -= 1;
+        }
+    }
+
     private void heapifyBelow(int index, int lastHeapIndex) {
         int childToSwap;
         while (index < lastHeapIndex) {
@@ -139,5 +150,15 @@ public class Heap {
 
     public boolean isEmpty() {
         return index == 0;
+    }
+
+    public void printSorted() {
+        int currentIndex = this.index - 1;
+        while (currentIndex >= 0) {
+            System.out.print(heap[currentIndex]);
+            System.out.print(",");
+            currentIndex -= 1;
+        }
+        System.out.println();
     }
 }
