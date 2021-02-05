@@ -10,8 +10,8 @@ public class Main {
 
         String[] data = new String[]{"bcdef", "dbaqc", "abcde", "omadd", "bbbbb"};
         RadixSort sorter = new RadixSort(data, 26, 5);
-        int[] array = {20,35,-15,7,35,1,-22,-16,21};
-        QuickSortAlgo.sort(array,0,array.length);
+        int[] array = {20,35,15,7,35,1,22,16,21};
+        CountSortAlgo.sort(array,1,35);
 
         for(int i=0; i< array.length; i++){
             System.out.print(array[i] + ",");
