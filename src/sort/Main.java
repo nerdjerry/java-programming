@@ -10,7 +10,7 @@ public class Main {
 
         String[] data = new String[]{"bcdef", "dbaqc", "abcde", "omadd", "bbbbb"};
         RadixSort sorter = new RadixSort(data, 26, 5);
-        int[] array = {204,351,153,753,351,122,224,126,211};
+        int[] array = {36,24,35,16,10,8};
         BucketSortAlgo.sort(array);
 
         for(int i=0; i< array.length; i++){
