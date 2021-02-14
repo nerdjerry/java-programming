@@ -1,6 +1,6 @@
-package sort;
+package sort.second;
 
-import static sort.BubbleSortAlgo.swap;
+import static sort.second.BubbleSortAlgo.swap;
 
 public class SelectionSortAlgo {
 

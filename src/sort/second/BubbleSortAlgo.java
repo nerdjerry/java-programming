@@ -1,4 +1,4 @@
-package sort;
+package sort.second;
 
 public class BubbleSortAlgo {
     public static void sort(int[] array){
