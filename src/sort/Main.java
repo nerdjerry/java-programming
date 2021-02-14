@@ -11,7 +11,7 @@ public class Main {
         String[] data = new String[]{"bcdef", "dbaqc", "abcde", "omadd", "bbbbb"};
         RadixSort sorter = new RadixSort(data, 26, 5);
         int[] array = {204,351,153,753,351,122,224,126,211};
-        RadixSortAlgo.sort(array, 3, 10);
+        BucketSortAlgo.sort(array);
 
         for(int i=0; i< array.length; i++){
             System.out.print(array[i] + ",");
