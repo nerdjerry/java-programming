@@ -7,14 +7,14 @@ public class BinarySearch {
     }
 
     public static int search(int[] input, int value, int start, int end) {
-        int midpoint = (start + end) / 2;
-        if (start >= end) {
+        int midpoint = (start + end)/2;
+        if(start >= end){
             return -1;
-        } else {
+        }else {
             if (input[midpoint] == value) {
                 return midpoint;
             } else if (input[midpoint] > value) {
-                return search(input, value, start, midpoint);
+                return search(input, value, start, midpoint - 1);
             } else {
                 return search(input, value, midpoint + 1, end);
             }
@@ -23,16 +23,15 @@ public class BinarySearch {
 
     public static int iterativeBinarySearch(int[] input, int value) {
         int start = 0;
-        int end = input.length;
-
-        while (start < end) {
-            int midpoint = (start + end) / 2;
-            if (input[midpoint] == value) {
+        int end = input.length-1;
+        while(start < end){
+            int midpoint = (end + start)/2;
+            if(input[midpoint] == value){
                 return midpoint;
-            } else if (input[midpoint] < value) {
+            }else if(input[midpoint] > value){
+                end = midpoint - 1;
+            }else {
                 start = midpoint + 1;
-            } else {
-                end = midpoint;
             }
         }
         return -1;
