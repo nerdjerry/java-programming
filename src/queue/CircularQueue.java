@@ -61,13 +61,13 @@ public class CircularQueue {
 
 
     public int size() {
-        if (back == -1) {
+        if (back == -1 || back == front) {
             return 0;
         }
-        if (back >= front) {
-            return back - front;
+        if (back > front) {
+            return back - front + 1;
         } else {
-            return back - front + capacity;
+            return back - front + capacity + 1;
         }
     }
 
@@ -75,7 +75,7 @@ public class CircularQueue {
         int count = 0;
         int j = front;
         int size = size();
-        while (count <= size) {
+        while (count < size) {
             System.out.print(queue[j] + " ");
             j = (j + 1) % capacity;
             count += 1;
